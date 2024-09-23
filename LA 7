@@ -1,0 +1,88 @@
+Practical No. 7
+
+Aim: To check the orthogonality of vectors.
+
+Q.1)(A) To check if two vectors of square are orthagonal.
+
+Code:
+
+import numpy as np
+
+def are_orthogonal(v1, v2):
+    dot_product = np.dot(v1, v2)
+    return np.isclose(dot_product, 0)
+
+vector1 = np.array([1, 0, -1])
+vector2 = np.array([0, 1, 1])
+
+if are_orthogonal(vector1, vector2):
+    print("The vectors are orthogonal")
+else:
+    print("The vectors are not orthogonal")
+
+Q.1)(B) To check if two vectors of square are orthagonal.
+
+Code:
+
+import numpy as np
+
+def are_orthogonal(v1, v2):
+    dot_product = np.dot(v1, v2)
+    return np.isclose(dot_product, 0)
+
+vector1 = np.array([1, 0, -6])
+vector2 = np.array([6, 5, 1])
+
+if are_orthogonal(vector1, vector2):
+    print("The vectors are orthogonal.")
+else:
+    print("The vectors are not orthogonal.")
+
+
+Q2(a) To check if two vectors are orthogonal.
+
+Code:
+
+import numpy as np
+
+def is_matrix_orthogonal(matrix):
+    if matrix.shape[0] != matrix.shape[1]:
+        return False
+    product = np.dot(matrix, matrix.T)
+    identity_matrix = np.eye(matrix.shape[0])
+    return np.allclose(product, identity_matrix)
+
+matrix = np.array([
+    [1, 0],
+    [0, -1]
+])
+
+if is_matrix_orthogonal(matrix):
+    print("The matrix is orthogonal.")
+else:
+    print("The matrix is not orthogonal.")
+
+
+Q2(b) To check if two vectors are orthogonal.
+
+Code:
+
+import numpy as np
+
+def is_matrix_orthogonal(matrix):
+    if matrix.shape[0] != matrix.shape[1]:
+        return False
+
+    product = np.dot(matrix, matrix.T)
+    identity_matrix = np.eye(matrix.shape[0])
+    return np.allclose(product, identity_matrix)
+
+matrix = np.array([
+    [1, 1],
+    [0, 1]
+])
+
+if is_matrix_orthogonal(matrix):
+    print("The matrix is orthogonal.")
+else:
+    print("The matrix is not orthogonal.")

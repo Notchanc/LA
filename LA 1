@@ -1,0 +1,101 @@
+Practical No. 1
+
+Aim: To calculate the multiplication of matrix transpose and inverse of matrix
+
+
+A. Multiplication and transpose of matrix using R/python/scilab/mat lab.
+
+code:
+
+import numpy as np
+
+#define matrices as numpy arrays
+mat1=np.array([
+    [1,2],
+    [3,6]])
+mat2=np.array([
+    [7,8],
+    [9,10]])
+
+#Multiply matrices using numpy's dot function
+result = np.dot(mat1, mat2)
+print("Result of matrix multiplication: ")
+print(result)
+
+#Transpose the matrix
+matrix=np.array([
+    [1,2],
+    [4,5],
+    [7,8]])
+tp_matrix = np.transpose(matrix)
+
+#Print the original and transposed matrices
+print("Original Matrix: ")
+print(matrix)
+print("\nTransposed Matrix: ")
+print(tp_matrix)
+
+
+B. Inverses of matrix in R/python/scilab/mat lab without using any inbuilt package.
+
+code:
+
+def matrix_inverse(matrix):
+    # Check if matrix is 2x2
+    if len(matrix) != 2 or len(matrix[0]) != 2:
+        print("Matrix is not 2x2. Inverse cannot be calculated.")
+        return None
+
+    # Extract elements of the matrix
+    a, b = matrix[0][0], matrix[0][1]
+    c, d = matrix[1][0], matrix[1][1]
+
+    # Calculate determinant
+    determinant = a * d - b * c
+
+    # Check if determinant is zero (matrix is singular)
+    if determinant == 0:
+        print("Matrix is singular. Inverse cannot be calculated.")
+        return None
+
+    # Calculate inverse matrix
+    inverse_matrix = [
+        [d / determinant, -b / determinant],
+        [-c / determinant, a / determinant]
+    ]
+
+    return inverse_matrix
+
+# Example matrix
+matrix = [
+    [4, 7],
+    [2, 6]
+]
+
+# Calculate inverse of matrix
+inverse = matrix_inverse(matrix)
+
+# Print the inverse matrix
+if inverse:
+    print("Inverse of the matrix:")
+    for row in inverse:
+        print(row)
+
+
+1C) inverse of matrix in python using any inbuilt package list
+
+code:
+
+import numpy as np
+# Example matrix
+matrix = np.array([
+[4, 7],
+[2, 6]
+])
+
+# Calculate inverse of matrix using numpy 
+inverse_matrix = np.linalg.inv(matrix)
+
+# Print the inverse matrix 
+print("Inverse of the matrix:")
+print(inverse_matrix)

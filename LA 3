@@ -62,3 +62,9 @@ print("Orthonormal basis:")
 
 print(orthonormal_vectors)
 
+
+output:
+Orthonormal basis vectors :
+[[ 0.70710678 0.70710678 0.       ]
+[0.40824829 -0.40824829 0.81649658]
+[-0.57735027 0.57735027 0.57735027]]  

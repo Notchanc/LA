@@ -1,0 +1,85 @@
+Practical No. 2
+
+Aim: To Addition, Subtraction, Multiplication, Division of two vectors and to find 
+      dot product and cross product.
+
+A. To Perform Addition, subtraction, multiplication anddivision of vector using R/python/scilab/matlab.
+
+Code:
+
+def add_vectors(vec1, vec2):
+    if len(vec1) != len(vec2):
+        raise ValueError("Vectors must have the same length")
+    return [x + y for x, y in zip(vec1, vec2)]
+
+def subtract_vectors(vec1, vec2):
+    if len(vec1) != len(vec2):
+        raise ValueError("Vectors must have the same length")
+    return [x - y for x, y in zip(vec1, vec2)]
+
+def multiply_vectors(vec1, vec2):
+    if len(vec1) != len(vec2):
+        raise ValueError("Vectors must have the same length")
+    return [x * y for x, y in zip(vec1, vec2)]
+
+def divide_vectors(vec1, vec2):
+    if len(vec1) != len(vec2):
+        raise ValueError("Vectors must have the same length")
+    return [x / y for x, y in zip(vec1, vec2) if y != 0]
+
+# Example usage
+vector1 = [1, 2, 3]
+vector2 = [4, 5, 6]
+
+print("Vector 1:", vector1)
+print("Vector 2:", vector2)
+
+try:
+    print("Addition:", add_vectors(vector1, vector2))
+    print("Subtraction:", subtract_vectors(vector1, vector2))
+    print("Multiplication:", multiply_vectors(vector1, vector2))
+    print("Division:", divide_vectors(vector1, vector2))
+except ValueError as e:
+    print("Error:", e)
+
+B. To perform dot product & cross product of vector
+    using R/python/scilab/matlab
+
+code:
+
+import numpy as np
+
+def calculate_dot_product(vec1, vec2):
+    try:
+        np_vec1 = np.array(vec1)
+        np_vec2 = np.array(vec2)
+        dot_product = np.dot(np_vec1, np_vec2)
+        return dot_product
+    except ValueError as e:
+        print("Error:", e)
+        return None
+
+def calculate_cross_product(vec1, vec2):
+    try:
+        np_vec1 = np.array(vec1)
+        np_vec2 = np.array(vec2)
+        cross_product = np.cross(np_vec1, np_vec2)
+        return cross_product
+    except ValueError as e:
+        print("Error:", e)
+        return None
+
+# Example usage
+vector1 = [1, 2, 3]
+vector2 = [4, 5, 6]
+
+dot_product = calculate_dot_product(vector1, vector2)
+cross_product = calculate_cross_product(vector1, vector2)
+
+if dot_product is not None:
+    print("Vector 1:", vector1)
+    print("Vector 2:", vector2)
+    print("Dot Product:", dot_product)
+
+if cross_product is not None:
+    print("Cross Product:", cross_product)

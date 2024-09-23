@@ -1,0 +1,50 @@
+Practical No. 4
+
+Aim: To find determinant of 2x2 and 3x3 matrix
+
+code:
+
+def determinant_2x2(matrix):
+    return matrix[0][0] * matrix[1][1] - matrix[0][1] * matrix[1][0]
+
+def determinant_3x3(matrix):
+    det = 0
+    for i in range(3):
+        submatrix = [
+            [matrix[j][k] for k in range(3) if k != i]
+            for j in range(1, 3)
+        ]
+        det += matrix[0][i] * (-1) ** i * determinant_2x2(submatrix)
+    return det
+
+matrix_2x2 = [
+    [2, 3],
+    [1, 4]
+]
+
+matrix_3x3 = [
+    [6, 1, 5],
+    [4, -2, 3],
+    [2, 8, 7]
+]
+
+det_2x2 = determinant_2x2(matrix_2x2)
+det_3x3 = determinant_3x3(matrix_3x3)
+
+print("Determinant of 2x2 matrix:", det_2x2)
+print("Determinant of 3x3 matrix:", det_3x3)
+
+
+Q.2) To find determinants of 2x2 and 3x3 matrices using inbuilt functions in python.
+
+Code:
+
+import numpy as np
+
+m = np.array([
+[4, 5, 6], 
+[0, 5, 2], 
+[0, 0, 6]
+])
+w = np.linalg.det(m)
+print("Determinant of matrix m is", w)

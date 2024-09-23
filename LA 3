@@ -27,40 +27,37 @@ Q.1 (b) Compute the orthonormal vectors using the GS algorithm using python
 
 code:
 
-import numpy as  np
+import numpy as np
 
-def gram_schmidt(A): 
-    Q,_ =np.linalg.qr(A)
-     return Q
-A = np.array([ [2,3],[1,4] ] )
-Q= gram_schmidt(A)
-print(" Orthonormal basis vectors:")
+def gram_schmidt(A):
+    Q, _ = np.linalg.qr(A)
+    return Q
+
+A = np.array([[2, 3], [1, 4]])
+Q = gram_schmidt(A)
+print("Orthonormal basis vectors:")
 print(Q)
+import numpy as np
 
-import numpy as np 
 def gram_schmidt(vectors):
- " " " Compute the Orthonormal basis using the gram_schmidt process." " "
-orthonormal vectors = []
+    """Compute the Orthonormal basis using the Gram-Schmidt process."""
+    orthonormal_vectors = []
 
-for v in vectors:
- For u in Orthonormal_vectors :
-v-= np.dot(v,u)*u
+    for v in vectors:
+        for u in orthonormal_vectors:
+            v -= np.dot(v, u) * u
 
-if np.linalg.norm(v) > 1e-10:
-Orthonormal_vectors.append(v/np.linalg.norm(v))
+        if np.linalg.norm(v) > 1e-10:
+            orthonormal_vectors.append(v / np.linalg.norm(v))
 
-return np.array(Orthonormal_vectors)
+    return np.array(orthonormal_vectors)
 
-if__name__ =="__main__"":
+if __name__ == "__main__":
+    vectors = np.array([[1, 1, 0], [1, 0, 1], [0, 1, 1]]).T
+    orthonormal_vectors = gram_schmidt(vectors)
 
-vectors = np.array([  [1,1,0],
-[1,0,1],[0,1,1]  ])
-
-orthonormal _vectors= gram_schmidt(vectors)
-
-print("Orthonormal basis:")
-
-print(orthonormal_vectors)
+    print("Orthonormal basis:")
+    print(orthonormal_vectors)
 
 
 output:

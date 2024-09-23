@@ -1,0 +1,42 @@
+Practical No. 5
+
+Aim: Compute Eigen values and Eigen vectors of given square array using
+            python.
+
+Q.1) Compute Eigenvalues and Eigenvectors of a given square array using python For 3x3 matrix.
+
+Code:
+
+import numpy as np
+
+m = np.array([[3, 2, -1], [0, 5, 6], [0, 0, 9]])
+
+print("Matrix:")
+print(m)
+
+w, v = np.linalg.eig(m)
+print("Eigenvalues of the matrix:\n", w)
+print("Eigenvectors of the matrix:\n", v)
+
+
+Q.2) Compute Eigenvalues and Eigenvectors of a given square array 
+     using python For 4x4 matrix.
+
+Code:
+
+import numpy as np
+
+m = np.array([
+    [3, 2, -1, 6],
+    [0, 5, 6, 8],
+    [0, 0, 9, 5],
+    [6, 4, 8, 2]
+])
+
+print("Original Matrix:")
+print(m)
+
+w, v = np.linalg.eig(m)
+
+print("Eigenvalues of the said matrix\n", w)
+print("Eigenvectors of the said matrix\n", v)

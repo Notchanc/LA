@@ -1,0 +1,46 @@
+Practical No. 6
+
+Aim: To check if the given matrix is diagonalisable or not.
+
+Q1) to check if given matrix is diagonalisable 2*2
+
+code:
+
+import numpy as np
+
+def is_diagonalizable(matrix):
+    matrix = np.array(matrix)
+    if matrix.shape[0] != matrix.shape[1]:
+        raise ValueError("Matrix must be square")
+    
+    eigenvalues, eigenvectors = np.linalg.eig(matrix)
+    return np.linalg.matrix_rank(eigenvectors) == matrix.shape[0]
+
+matrix = np.array([
+    [4, 1],
+    [2, 3]
+])
+
+print("Is the matrix diagonalizable?", is_diagonalizable(matrix))
+
+
+Q2  to check if given matrix is diagonalisable  3*3
+
+code:
+
+import numpy as np
+
+def is_diagonalizable(matrix):
+    matrix = np.array(matrix)
+    if matrix.shape[0] != matrix.shape[1]:
+        raise ValueError("Matrix must be square")
+    
+    eigenvalues, eigenvectors = np.linalg.eig(matrix)
+    return np.linalg.matrix_rank(eigenvectors) == matrix.shape[0]
+
+matrix = np.array([
+    [1, 1],
+    [0, 1]
+])
+
+print("Is the matrix diagonalizable?", is_diagonalizable(matrix))

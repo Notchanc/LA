@@ -1,0 +1,52 @@
+1.How to find inverse of matrix using numpy?
+import numpy 
+Create/ define a square matrix, as only square matrices have inverses.
+Use numpy.linalg.inv() to find the inverse.
+
+
+2. How to find Multiplication of 2 matrices using numpy?
+Create/ define 2 matrices and then use 
+numpy.dot()    or    numpy.matmul()
+
+
+3. How to find transpose of matrix using numpy?
+Create/ Define a matrix and then use 
+numpy.transpose()    or      .T  ( like matrix.T )
+
+
+4. Define
+1. Orthogonal Vectors
+Two vectors are orthogonal if their dot product is zero. This means they are perpendicular to each other in space.
+2. Orthonormal Vectors
+Vectors are orthonormal if they are both orthogonal (perpendicular) and each vector has a magnitude of 1. They form a set of unit vectors that are mutually perpendicular.
+3. Eigenvalue & Eigenvector
+An eigenvector of a matrix is a non-zero vector that only changes by a scalar factor when that matrix is applied to it. The scalar is called the eigenvalue. Mathematically, for a matrix AAA and a vector vvv, Av=λvA v = \lambda vAv=λv, where λ\lambdaλ is the eigenvalue.
+4. Linear Span
+The linear span of a set of vectors is the collection of all possible linear combinations of those vectors. It forms a subspace that contains all vectors that can be created by scaling and adding the original vectors.
+
+5. How to compute Eigen value and Eigen vectors using Python?
+Create/ Define a matrix and then use numpy.linalg.eig()
+
+6. What is Singular Value Decomposition and its applications?
+Singular Value Decomposition (SVD) is a factorization method for matrices in linear algebra. For a given matrix AAA, SVD decomposes it into three matrices:
+A=UΣVTA = U \Sigma V^TA=UΣVT
+Where:
+UUU is an orthogonal matrix (representing the left singular vectors),
+Σ\SigmaΣ is a diagonal matrix (containing the singular values),
+VTV^TVT is the transpose of an orthogonal matrix (representing the right singular vectors).
+Applications: 
+Dimensionality Reduction
+Text Mining
+Solving Linear Systems
+Recommendation Systems
+Image Compression 
+Noise Reduction
+
+7. How to check if the given matrix is diagonalizable or not? (Formula & steps to find)
+1) Find the Eigenvalues. 
+2) Find the Eigenvectors.
+3) Determine the Algebraic and Geometric Multiplicities. 
+4) Check Diagonalizability Condition.
+ Formula: 
+for Eigenvalues (Α-λΙ)=0,
+for Eigenvectors (Α-λίⅠ)v=0
